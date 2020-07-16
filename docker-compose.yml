@@ -31,13 +31,6 @@ services:
         depends_on:
             - php-fpm
 
-    node:
-        image: node:12-alpine
-        command: sh -c "yarn install && yarn encore dev --watch"
-        volumes:
-            - .:/app:cached
-        working_dir: /app
-
     composer:
         image: composer:1.9.0
         command: install
